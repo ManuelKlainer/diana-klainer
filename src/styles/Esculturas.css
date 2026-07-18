@@ -239,4 +239,9 @@
         max-width: 95vw;
         max-height: 80vh;
     }
+
+    .escultura-img {
+        max-width: 100%;
+        object-fit: contain;
+    }
 }

@@ -165,4 +165,9 @@
         max-width: 95vw;
         max-height: 80vh;
     }
+
+    .relieve-img {
+        max-width: 100%;
+        object-fit: contain;
+    }
 }

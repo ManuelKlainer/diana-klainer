@@ -1,6 +1,6 @@
 .home-main {
 	width: 100vw;
-	height: calc(100vh - 80px); /* Usamos vh en vez de % para que no colapse */
+	height: calc(100dvh - 80px); /* Usamos vh en vez de % para que no colapse */
 	position: relative;
 	overflow: hidden;
 	background-color: #e9e9e9;
