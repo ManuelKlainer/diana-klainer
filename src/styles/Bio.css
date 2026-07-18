@@ -1,0 +1,58 @@
+@media (max-width: 768px) {
+    .bio-image {
+        float: none;
+        display: block;
+        width: 70%;
+        margin: 0 auto 20px auto;
+    }
+    
+    .bio-text {
+        font-size: 12pt;
+        text-align: justify;
+    }
+
+    .bio-title {
+        margin-top: 5vh;
+        text-align: center;
+    }
+}
+
+.bio-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flow-root;
+    margin-top: 20px;
+}
+
+.bio-image {
+    float: right;
+    width: 250px;
+    height: auto;
+    margin: 0 0 15px 20px;
+    border-radius: 8px;
+}
+
+.bio-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14pt;
+    line-height: 1.6;
+}
+
+.bio-title {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flow-root;
+    margin-top: 10vh;
+
+}
+
+.bio-title h3 {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 24pt;
+}
+

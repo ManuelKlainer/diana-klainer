@@ -1,0 +1,248 @@
+
+.retratos-main {
+	width: 100vw;
+	height: 100%;
+	position: relative;
+    background: #E8ECEF;
+}
+
+.retratos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.retratos-title {
+    margin-top: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 28pt;
+    color: black;
+}
+
+.retratos-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-around;
+    gap: 40px;
+    width: 100%;
+    height: auto;
+}
+
+.retrato-box {
+    width: 65vw;
+    max-width: 1000px;
+
+    background-color: #31424C;
+    color: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 50vh;
+    cursor: pointer;
+}
+
+.retrato-box:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+}
+
+.retrato-img-section-multiple {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    height: 80%;
+    width: 45%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.retrato-img-track {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.retrato-img-wrapper {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.retrato-img-section-multiple .retrato-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    cursor: zoom-in;
+    border-radius: 10px;
+}
+
+.retrato-img-section-multiple .buttons {
+    position: absolute;
+    bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.retrato-img-section-multiple .buttons .bubble {
+    width: 10px;
+    height: 10px;
+    background-color: lightgray;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+}
+
+.retrato-img-section-multiple .buttons .bubble.selected {
+    background-color: gray;
+}
+
+
+.retrato-img-section {
+    height: 80%;
+    width: 45px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.retrato-img-section-multiple .retrato-img {
+    border-radius: 10px;
+}
+
+.retrato-img {
+    width: auto;
+    height: 100%;
+    cursor: zoom-in;
+    
+    border-radius: 10px;
+}
+
+.retrato-text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 15px;
+    width: 35%;
+}
+
+
+.retrato-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+}
+
+.retrato-label {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 14pt;
+    color: lightgray;
+}
+
+.retrato-title {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 24pt;
+}
+
+.retrato-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14pt;
+    color: white;
+}
+
+.big-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.big-img-content {
+    max-width: 60vw;
+    max-height: 60vh;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    cursor: default;
+}
+
+@media (max-width: 768px) {
+    .retrato-box {
+        flex-direction: column !important;
+        width: 85vw;
+        height: auto; 
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .retrato-img-section-multiple, .retrato-img-section {
+        width: 100%;
+        height: 40vh; 
+    }
+
+    .retrato-img {
+        max-width: 100%;
+        object-fit: contain; /* Evita deformaciones si el contenedor cambia */
+    }
+
+    .retrato-text-section {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .retrato-row {
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .retrato-title {
+        font-size: 18pt;
+    }
+
+    .big-img-content {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+}

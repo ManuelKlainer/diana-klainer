@@ -1,0 +1,242 @@
+
+.esculturas-main {
+	width: 100vw;
+	height: 100%;
+	position: relative;
+    background: #E8ECEF;
+}
+
+.esculturas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.esculturas-title {
+    margin-top: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 28pt;
+    color: black;
+}
+
+.esculturas-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-around;
+    gap: 40px;
+    width: 100%;
+    height: auto;
+}
+
+.escultura-box {
+    width: 65vw;
+    max-width: 1000px;
+
+    background-color: #31424C;
+    color: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 50vh;
+    cursor: pointer;
+}
+
+.escultura-box:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+}
+
+.escultura-img-section-multiple {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    height: 80%;
+    width: 45%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.escultura-img-track {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.escultura-img-wrapper {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.escultura-img-section-multiple .escultura-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    cursor: zoom-in;
+    border-radius: 10px;
+}
+
+.escultura-img-section-multiple .buttons {
+    position: absolute;
+    bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.escultura-img-section-multiple .buttons .bubble {
+    width: 10px;
+    height: 10px;
+    background-color: lightgray;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+}
+
+.escultura-img-section-multiple .buttons .bubble.selected {
+    background-color: gray;
+}
+
+
+.escultura-img-section {
+    height: 80%;
+    width: 45px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.escultura-img-section-multiple .escultura-img {
+    border-radius: 10px;
+}
+
+.escultura-img {
+    width: auto;
+    height: 100%;
+    cursor: zoom-in;
+    border-radius: 10px;
+}
+
+.escultura-text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 15px;
+    width: 35%;
+}
+
+
+.escultura-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+}
+
+.escultura-label {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 14pt;
+    color: lightgray;
+}
+
+.escultura-title {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 24pt;
+}
+
+.escultura-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14pt;
+    color: white;
+}
+
+.big-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.big-img-content {
+    max-width: 60vw;
+    max-height: 60vh;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    cursor: default;
+}
+
+@media (max-width: 768px) {
+    .escultura-box, .retrato-box {
+        flex-direction: column;
+        width: 85vw;
+        height: auto; /* Dejamos que el contenido dicte la altura */
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .escultura-img-section-multiple, .retrato-img-section-multiple,
+    .escultura-img-section, .retrato-img-section {
+        width: 100%;
+        height: 40vh; /* Le damos altura fija a la imagen para que no desborde */
+    }
+
+    .escultura-text-section, .retrato-text-section {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .escultura-row, .retrato-row {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .escultura-title, .retrato-title {
+        font-size: 18pt;
+    }
+
+    .big-img-content {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+}

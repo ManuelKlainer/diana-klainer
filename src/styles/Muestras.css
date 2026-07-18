@@ -1,0 +1,130 @@
+.muestras-main {
+    width: 100vw;
+    height: calc(100% - 80px);
+    position: relative;
+    background: #E8ECEF;
+}
+
+.muestras-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.muestras-header {
+    display: flex;
+    flex-direction: row;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 900;
+    font-size: 24pt;
+    margin-top: 10px;
+    margin-left: 5%;
+}
+.muestras-display {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+.muestras {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.muestra-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    width: 90%;
+}
+
+.muestra {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+
+}
+.muestra .muestra-title {
+    
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 28pt;
+    color: black;
+    margin-bottom: 10px;
+}
+
+
+.muestra .carrete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+
+    width: 30%;
+    aspect-ratio: 1 / 1;
+
+    position: relative;
+    overflow: hidden;
+    background: inherit;
+}
+
+.muestra .carrete img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;
+}
+
+.muestra .carrete img.next {
+    z-index: 1;
+}
+
+.muestra .carrete img.current {
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 3s ease-in-out;
+}
+
+.muestra .carrete img.current.fade-out {
+    opacity: 0 !important;
+}
+
+.muestra .carrete img.current.no-transition {
+    transition: none !important;
+}
+
+/* --- ADAPTACIÓN MOBILE --- */
+@media (max-width: 768px) {
+    .muestra-container {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .muestra .carrete {
+        width: 80%; /* Aumentamos el tamaño del carrete en celular */
+        margin: 0 auto;
+    }
+    
+    .muestra .muestra-title {
+        font-size: 20pt;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .muestras-header {
+        justify-content: center;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,96 @@
+.home-main {
+	width: 100vw;
+	height: calc(100vh - 80px); /* Usamos vh en vez de % para que no colapse */
+	position: relative;
+	overflow: hidden;
+	background-color: #e9e9e9;
+}
+
+.scrollable-content {
+	
+	background-color: gray;
+	/*background-color: #f0f0f0;
+	animation: bgColorSync 15s infinite;*/
+}
+
+.slideshow-container {
+	position: absolute; /* Cambiado a absolute para ajustarse al home-main */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: -1;
+}
+
+.background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%; /* Ajustado para cubrir el contenedor */
+	object-fit: cover; /* Esto asegura que la imagen cubra todo sin deformarse */
+	display: block;
+	pointer-events: none;
+	opacity: 0;
+	animation: cssFade 15s infinite;
+}
+
+.background-image:nth-child(1) { animation-delay: 0s; }
+.background-image:nth-child(2) { animation-delay: 5s; } /* Ajusté los tiempos para que sea más fluido */
+.background-image:nth-child(3) { animation-delay: 10s; }
+
+@keyframes cssFade {
+	0% { opacity: 0; }
+	15% { opacity: 1; }
+	33.33% { opacity: 1; }
+	48% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+@keyframes bgColorSync {
+	/* 0% a 18.33%: Imagen 1 sólida. Fondo inamovible. */
+	0% { background-color: #f0f0f0; }
+	18.33% { background-color: #f0f0f0; }
+
+	/* 18.33% a 30.33%: Ocurre el crossfade a la Imagen 2 (Dura 1.8s exactos) */
+	30.33% { background-color: #d0d0d0; }
+
+	/* 30.33% a 51.66%: Imagen 2 sólida. Fondo inamovible. */
+	51.66% { background-color: #d0d0d0; }
+
+	/* 51.66% a 63.66%: Ocurre el crossfade a la Imagen 3 */
+	63.66% { background-color: #fbfbfb; }
+
+	/* 63.66% a 85.00%: Imagen 3 sólida. Fondo inamovible. */
+	85.00% { background-color: #fbfbfb; }
+
+	/* 85.00% a 97.00%: Ocurre el crossfade de vuelta a la Imagen 1 */
+	97.00% { background-color: #f0f0f0; }
+
+	/* 97.00% a 100%: La Imagen 1 ya está sólida, cierra el ciclo perfecto */
+	100% { background-color: #f0f0f0; }
+}
+
+.scrollable-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	z-index: 1;
+	box-sizing: border-box;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.scrollable-content::-webkit-scrollbar {
+	display: none;
+}
+
+@media (max-width: 768px) {
+    .scrollable-content {
+        background-color: transparent; /* Apagamos el gris solo en celulares */
+    }
+}
