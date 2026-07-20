@@ -1,10 +1,27 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { useSwipe } from '../hooks/useSwipe'
 
 const EsculturaCard = ({ title, technique, dimensions, images, setSelectedImg }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const imageList = Array.isArray(images) ? images : [images];
     const hasMultipleImages = imageList.length > 1;
+
+    const buttonsRefs = useRef([]);
+
+    const swipeHandlers = useSwipe({
+        onSwipedLeft: (element) => {
+            setCurrentIndex(prevIndex => 
+                prevIndex < imageList.length - 1 ? prevIndex + 1 : prevIndex
+            );
+        },
+        onSwipedRight: (element) => {
+            setCurrentIndex(prevIndex => 
+                prevIndex > 0 ? prevIndex - 1 : prevIndex
+            );
+        }
+    })
+
 
     return (
         <div className="escultura-box">
@@ -20,6 +37,7 @@ const EsculturaCard = ({ title, technique, dimensions, images, setSelectedImg })
                                 alt={`${title} - Vista ${index + 1}`}
                                 className="escultura-img"
                                 onClick={() => setSelectedImg(src)}
+                                {...swipeHandlers}
                             />
                         </div>
                     ))}
@@ -32,6 +50,9 @@ const EsculturaCard = ({ title, technique, dimensions, images, setSelectedImg })
                                 key={index}
                                 className={`bubble ${currentIndex === index ? 'selected' : ''}`}
                                 onClick={() => setCurrentIndex(index)}
+                                ref={(el) => {
+                                    buttonsRefs.current[index] = el;
+                                }}
                             ></div>
                         ))}
                     </div>
