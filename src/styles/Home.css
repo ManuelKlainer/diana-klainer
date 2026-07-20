@@ -1,5 +1,5 @@
 .home-main {
-	width: 100vw;
+	width: 100%;
 	height: calc(100dvh - 80px); /* Usamos vh en vez de % para que no colapse */
 	position: relative;
 	overflow: hidden;
