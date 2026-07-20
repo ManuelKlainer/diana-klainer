@@ -31,6 +31,7 @@
 .footer-right {
     display: flex;
     gap: 20px;
+    display: none;
 }
 .social-icon {
     color: white;
